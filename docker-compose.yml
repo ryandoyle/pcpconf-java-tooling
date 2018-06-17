@@ -1,0 +1,17 @@
+graphite:
+  image: graphiteapp/graphite-statsd
+  ports:
+    - 8088:80
+    - 2003:2003
+    - 2004:2004
+    - 2023:2023
+    - 2024:2024
+
+graphana:
+  image: grafana/grafana
+  ports:
+    - 3000:3000
+  links:
+    - graphite
+  environment:
+    - GF_SECURITY_ADMIN_PASSWORD=secret

@@ -1,0 +1,11 @@
+#kmchart
+version 1
+
+chart title "Garbage Collection Rate" style plot
+	plot legend "Full" color #ffff00 metric mmv.pcpcoin.java.memory.gc.full.count
+	plot legend "Minor" color #0000ff metric mmv.pcpcoin.java.memory.gc.minor.count
+chart title "Garbage Collection Time" style plot
+	plot legend "Full" color #ffff00 metric mmv.pcpcoin.java.memory.gc.full.time
+	plot legend "Minor" color #0000ff metric mmv.pcpcoin.java.memory.gc.minor.time
+chart title "Heap Used" style plot
+	plot legend "Used" color #0000ff metric mmv.pcpcoin.java.memory.heap instance "used"

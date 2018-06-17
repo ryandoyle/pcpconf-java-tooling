@@ -1,0 +1,12 @@
+#kmchart
+version 1
+
+chart style plot antialiasing off
+	plot color #ffff00 host local: metric mmv.pcpcoin.transaction.count instance "failure"
+	plot color #0000ff host local: metric mmv.pcpcoin.transaction.count instance "success"
+	plot color #ff0000 host local: metric mmv.pcpcoin.transaction.count instance "total"
+chart style plot antialiasing off
+	plot color #0000ff host local: metric mmv.pcpcoin.transaction.amount.mean
+	plot color #ff0000 host local: metric mmv.pcpcoin.transaction.amount.min
+chart style plot antialiasing off
+	plot color #ffff00 host local: metric mmv.pcpcoin.customer.new
