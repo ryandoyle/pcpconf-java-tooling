@@ -1,0 +1,9 @@
+#kmchart
+version 1
+
+chart title "Transaction Amounts" style plot antialiasing off
+	plot legend "Mean" color #ffff00 metric mmv.pcpcoin.transaction.amount.mean
+	plot legend "95th" color #008000 metric mmv.pcpcoin.transaction.amount.ninetyfifth
+	plot legend "75th" color #0019ff metric mmv.pcpcoin.transaction.amount.seventyfifth
+chart title "Transaction Rate" style plot antialiasing off
+	plot legend "Per Second" color #ffff00 metric mmv.pcpcoin.transaction.amount.count

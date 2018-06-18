@@ -1,0 +1,12 @@
+#kmchart
+version 1
+
+chart title "Count" style plot antialiasing off
+	plot legend "Invocation Count" color #ffff00 metric mmv.pcpcoin.profiled.customerService.count
+chart title "Heap Used" style plot antialiasing off
+	plot legend "Heap" color #ffff00 metric mmv.pcpcoin.profiled.customerService.heap
+chart title "Service Time" style plot antialiasing off
+	plot legend "Time (ns)" color #ffff00 metric mmv.pcpcoin.profiled.customerService.time
+chart title "CPU Time" style plot antialiasing off
+	plot legend "System" color #ffff00 metric mmv.pcpcoin.profiled.customerService.stime
+	plot legend "User" color #0000ff metric mmv.pcpcoin.profiled.customerService.utime

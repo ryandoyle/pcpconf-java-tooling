@@ -19,29 +19,47 @@ Start the load test
 ./gradlew gatlingRun
 ```
 
-### Demo 2 - Application-based
-Start the app if it's not started
+### Demo 2.1 - Basic metrics
+Start the app
 ```bash
 ./gradlew startWithoutAgent
 ```
-
-
-### Demo 3 - Graphite/Grafana
-Start the app if it's not started
-```bash
-./gradlew startWithoutAgent
-```
-
-Start the containers
-```bash
-docker-compose up -d
-```
-Start publishing metrics
-```bash
-./pcp2graphite.py -t 1sec -h localhost mmv.pcpcoin
-```
-
-Start Gatling
+Start the load test
 ```bash
 ./gradlew gatlingRun
 ```
+Check what metrics are available
+```bash
+pminfo -f mmv.pcpcoin.customer.new
+```
+View the metric
+```bash
+pmchart -c pmchart-views/demo2 & 
+```
+
+### Demo 2.2 - Advanced Metrics
+
+
+### Demo 2.3 - Integrations
+
+
+### Demo 3 - Graphite/Grafana
+Start the app and load test
+```bash
+./gradlew startWithoutAgent
+./gradlew gatlingRun
+```
+
+Setup monitoring infrastructure
+```bash
+docker-compose up -d
+sleep 10
+./configure_grafana.sh
+./pcp2graphite.py -t 1sec -h localhost mmv.pcpcoin & 
+
+```
+Import the dashboard
+* Open http://localhost:3030
+* Login with admin/secret
+* Click on the menu icon in the top left corner and navigate to **Dashboards** > **Import**
+* Upload `grafana_dashboard.json` in the project root dir 
