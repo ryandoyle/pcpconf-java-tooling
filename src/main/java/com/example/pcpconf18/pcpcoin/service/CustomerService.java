@@ -1,6 +1,7 @@
 package com.example.pcpconf18.pcpcoin.service;
 
 import com.example.pcpconf18.pcpcoin.repository.CustomerRepository;
+import io.pcp.parfait.spring.Profiled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
+    @Profiled
     public Integer createNewCustomer(String name) {
         return customerRepository.newCustomer(name);
     }
