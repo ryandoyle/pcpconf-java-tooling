@@ -38,9 +38,17 @@ pmchart -c pmchart-views/demo2 &
 ```
 
 ### Demo 2.2 - Advanced Metrics
+View the metric
+```bash
+pmchart -c pmchart-views/demo3 & 
+```
 
 
 ### Demo 2.3 - Integrations
+View the metric
+```bash
+pmchart -c pmchart-views/demo4 & 
+```
 
 
 ### Demo 3 - Graphite/Grafana
